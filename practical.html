@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navigation Menu – Display & Float (Responsive)</title>
+
+  <style>
+         { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+        section.inline-elements {
+      padding: 16px;
+      background: #fff;
+    }
+    section.inline-elements h3 {
+      margin-top: 0;
+    }
+    .inline-elements span {
+      display: inline;
+      margin-right: 15px;
+      color: black;
+    }
+
+        nav {
+      background: #444;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      text-align: center; /* better look on wider screens */
+    }
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    nav ul li:last-child {
+      margin-right: 0;
+    }
+    
+        .container {
+      padding: 16px;
+      background: #fff;
+    
+    }
+    .float-box {
+      width: 30%;
+      height: 120px;
+      background: lightcoral;
+      float: left;
+      margin-right: 3.333%;
+      padding: 10px;
+      color: #222;
+      border-radius: 6px;
+    }
+    .float-box:last-child {
+      margin-right: 0;
+    }
+
+        .clear {
+      clear: both;
+      padding: 10px;
+      background: lightblue;
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.25rem;
+      }
+
+            nav ul {
+        padding: 8px;
+        text-align: left;
+      }
+      nav ul li {
+        display: block;
+        margin: 8px 0;
+      }
+      nav ul li a {
+        display: block;               width: 100%;
+      }
+
+           .float-box {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        height: auto;                }
+    }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+      .float-box {
+        width: 48%;
+        float: left;
+        margin-right: 4%;
+        height: 140px;
+      }
+      .float-box:nth-child(2n) {
+        margin-right: 0; /* end of row */
+      }
+    }    @media (min-width: 1025px) {
+      .float-box {
+        width: 30%;
+        margin-right: 3.333%;
+        height: 160px;
+      }
+      .float-box:last-child {
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Navigation menu using CSS <em>display</em> &amp; <em>float</em></h1>
+  </header>
+
+  <section class="inline-elements">
+    <h3>Inline Example</h3>
+    <span>Home</span>
+    <span>About</span>
+    <span>Contact</span>
+  </section>
+
+  <nav aria-label="Primary">
+    <ul>
+      <li>#Home</a></li>
+      <li>#Service</a></li>
+      <li>#Gallery</a></li>
+      <li>#Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="float-row">
+      <div class="float-box">Box 1 content</div>
+      <div class="float-box">Box 2 content</div>
+      <div class="float-box">Box 3 content</div>
+    </div>
+
+    <div class="clear">This section clears floats and sits below the boxes.</div>
+  </div>
+</body>
+</html>
